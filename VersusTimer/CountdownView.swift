@@ -62,7 +62,20 @@ class CountdownViewModel: ObservableObject {
 }
 
 struct CountdownView: View {
-    @StateObject private var viewModel = CountdownViewModel()
+    @StateObject private var topViewModel = CountdownViewModel()
+    @StateObject private var bottomViewModel = CountdownViewModel()
+
+    var body: some View {
+        VStack(spacing: 0) {
+            CountdownContent(viewModel: topViewModel)
+                .rotationEffect(.degrees(180)) // 상단 타이머 180도 회전
+            CountdownContent(viewModel: bottomViewModel)
+        }
+    }
+}
+
+struct CountdownContent: View {
+    @ObservedObject var viewModel: CountdownViewModel
 
     var body: some View {
         VStack(spacing: 20) {
@@ -74,7 +87,7 @@ struct CountdownView: View {
                 .keyboardType(.decimalPad)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .multilineTextAlignment(.center) // 가운데 정렬 설정
+                .multilineTextAlignment(.center)
                 .disabled(viewModel.isRunning)
             
             Text(String(format: "%.2f", viewModel.remainingTime))
@@ -99,7 +112,7 @@ struct CountdownView: View {
         .background(progressBackground().edgesIgnoringSafeArea(.all))
     }
     
-    func progressBackground() -> some View {
+    private func progressBackground() -> some View {
         let progress = viewModel.isRunning || viewModel.showRedBackground ? viewModel.remainingTime / viewModel.totalTime : 1.0
         
         return GeometryReader { geometry in
