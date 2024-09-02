@@ -1,10 +1,3 @@
-//
-//  CountdownView.swift
-//  VersusTimer
-//
-//  Created by Minsu Han on 9/2/24.
-//
-
 import SwiftUI
 
 struct CountdownView: View {
@@ -12,7 +5,8 @@ struct CountdownView: View {
     @State private var remainingTime: Double = 0.0
     @State private var isRunning: Bool = false
     @State private var timer: Timer? = nil
-    @State private var backgroundColor: Color = .green
+    @State private var totalTime: Double = 0.0
+    @State private var showRedBackground: Bool = false
     
     var body: some View {
         VStack(spacing: 20) {
@@ -45,20 +39,38 @@ struct CountdownView: View {
             .disabled(isRunning)
         }
         .padding()
-        .background(backgroundColor.edgesIgnoringSafeArea(.all))
+        .background(progressBackground().edgesIgnoringSafeArea(.all))
+    }
+    
+    func progressBackground() -> some View {
+        let progress = isRunning || showRedBackground ? remainingTime / totalTime : 1.0
+        
+        return GeometryReader { geometry in
+            VStack(spacing: 0) {
+                Color.red
+                    .frame(height: geometry.size.height * (1.0 - progress))
+                Color.green
+                    .frame(height: geometry.size.height * progress)
+            }
+        }
     }
     
     func startCountdown(time: Double) {
+        self.totalTime = time
         self.remainingTime = time
         self.isRunning = true
-        self.backgroundColor = .green  // 타이머 시작 시 배경색을 Green으로 설정
+        self.showRedBackground = false
         
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
             if self.remainingTime > 0.01 {
                 self.remainingTime -= 0.01
             } else {
-                self.remainingTime = 0.00  // 타이머가 0.00 이하로 내려가지 않도록 설정
+                self.remainingTime = 0.00
                 self.stopCountdown()
+                self.showRedBackground = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.showRedBackground = false
+                }
             }
         }
     }
@@ -67,7 +79,7 @@ struct CountdownView: View {
         self.timer?.invalidate()
         self.timer = nil
         self.isRunning = false
-        self.backgroundColor = .red  // 타이머 종료 시 배경색을 Red로 설정
+        self.remainingTime = 0.00
     }
 }
 
