@@ -74,6 +74,7 @@ struct CountdownView: View {
                 .keyboardType(.decimalPad)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .multilineTextAlignment(.center) // 가운데 정렬 설정
                 .disabled(viewModel.isRunning)
             
             Text(String(format: "%.2f", viewModel.remainingTime))
