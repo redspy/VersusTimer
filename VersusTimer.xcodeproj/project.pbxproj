@@ -14,6 +14,7 @@
 		066CB2502C85F76600A88894 /* VersusTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB24F2C85F76600A88894 /* VersusTimerTests.swift */; };
 		066CB25A2C85F76600A88894 /* VersusTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB2592C85F76600A88894 /* VersusTimerUITests.swift */; };
 		066CB25C2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB25B2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift */; };
+		06FEAB242C85FAC600896EC1 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FEAB232C85FAC600896EC1 /* CountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		066CB2552C85F76600A88894 /* VersusTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersusTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		066CB2592C85F76600A88894 /* VersusTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusTimerUITests.swift; sourceTree = "<group>"; };
 		066CB25B2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		06FEAB232C85FAC600896EC1 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				066CB23E2C85F76500A88894 /* VersusTimerApp.swift */,
+				06FEAB232C85FAC600896EC1 /* CountdownView.swift */,
 				066CB2402C85F76500A88894 /* ContentView.swift */,
 				066CB2422C85F76600A88894 /* Assets.xcassets */,
 				066CB2442C85F76600A88894 /* Preview Content */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FEAB242C85FAC600896EC1 /* CountdownView.swift in Sources */,
 				066CB2412C85F76500A88894 /* ContentView.swift in Sources */,
 				066CB23F2C85F76500A88894 /* VersusTimerApp.swift in Sources */,
 			);
