@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		066CB23F2C85F76500A88894 /* VersusTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB23E2C85F76500A88894 /* VersusTimerApp.swift */; };
+		066CB2412C85F76500A88894 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB2402C85F76500A88894 /* ContentView.swift */; };
+		066CB2432C85F76600A88894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 066CB2422C85F76600A88894 /* Assets.xcassets */; };
+		066CB2462C85F76600A88894 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 066CB2452C85F76600A88894 /* Preview Assets.xcassets */; };
+		066CB2502C85F76600A88894 /* VersusTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB24F2C85F76600A88894 /* VersusTimerTests.swift */; };
+		066CB25A2C85F76600A88894 /* VersusTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB2592C85F76600A88894 /* VersusTimerUITests.swift */; };
+		066CB25C2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CB25B2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		066CB24C2C85F76600A88894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 066CB2332C85F76500A88894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 066CB23A2C85F76500A88894;
+			remoteInfo = VersusTimer;
+		};
+		066CB2562C85F76600A88894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 066CB2332C85F76500A88894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 066CB23A2C85F76500A88894;
+			remoteInfo = VersusTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		066CB23B2C85F76500A88894 /* VersusTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersusTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		066CB23E2C85F76500A88894 /* VersusTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusTimerApp.swift; sourceTree = "<group>"; };
+		066CB2402C85F76500A88894 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		066CB2422C85F76600A88894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		066CB2452C85F76600A88894 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		066CB24B2C85F76600A88894 /* VersusTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersusTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		066CB24F2C85F76600A88894 /* VersusTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusTimerTests.swift; sourceTree = "<group>"; };
+		066CB2552C85F76600A88894 /* VersusTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersusTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		066CB2592C85F76600A88894 /* VersusTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusTimerUITests.swift; sourceTree = "<group>"; };
+		066CB25B2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		066CB2382C85F76500A88894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066CB2482C85F76600A88894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066CB2522C85F76600A88894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		066CB2322C85F76500A88894 = {
+			isa = PBXGroup;
+			children = (
+				066CB23D2C85F76500A88894 /* VersusTimer */,
+				066CB24E2C85F76600A88894 /* VersusTimerTests */,
+				066CB2582C85F76600A88894 /* VersusTimerUITests */,
+				066CB23C2C85F76500A88894 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		066CB23C2C85F76500A88894 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				066CB23B2C85F76500A88894 /* VersusTimer.app */,
+				066CB24B2C85F76600A88894 /* VersusTimerTests.xctest */,
+				066CB2552C85F76600A88894 /* VersusTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		066CB23D2C85F76500A88894 /* VersusTimer */ = {
+			isa = PBXGroup;
+			children = (
+				066CB23E2C85F76500A88894 /* VersusTimerApp.swift */,
+				066CB2402C85F76500A88894 /* ContentView.swift */,
+				066CB2422C85F76600A88894 /* Assets.xcassets */,
+				066CB2442C85F76600A88894 /* Preview Content */,
+			);
+			path = VersusTimer;
+			sourceTree = "<group>";
+		};
+		066CB2442C85F76600A88894 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				066CB2452C85F76600A88894 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		066CB24E2C85F76600A88894 /* VersusTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				066CB24F2C85F76600A88894 /* VersusTimerTests.swift */,
+			);
+			path = VersusTimerTests;
+			sourceTree = "<group>";
+		};
+		066CB2582C85F76600A88894 /* VersusTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				066CB2592C85F76600A88894 /* VersusTimerUITests.swift */,
+				066CB25B2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift */,
+			);
+			path = VersusTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		066CB23A2C85F76500A88894 /* VersusTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066CB25F2C85F76600A88894 /* Build configuration list for PBXNativeTarget "VersusTimer" */;
+			buildPhases = (
+				066CB2372C85F76500A88894 /* Sources */,
+				066CB2382C85F76500A88894 /* Frameworks */,
+				066CB2392C85F76500A88894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VersusTimer;
+			productName = VersusTimer;
+			productReference = 066CB23B2C85F76500A88894 /* VersusTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		066CB24A2C85F76600A88894 /* VersusTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066CB2622C85F76600A88894 /* Build configuration list for PBXNativeTarget "VersusTimerTests" */;
+			buildPhases = (
+				066CB2472C85F76600A88894 /* Sources */,
+				066CB2482C85F76600A88894 /* Frameworks */,
+				066CB2492C85F76600A88894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				066CB24D2C85F76600A88894 /* PBXTargetDependency */,
+			);
+			name = VersusTimerTests;
+			productName = VersusTimerTests;
+			productReference = 066CB24B2C85F76600A88894 /* VersusTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		066CB2542C85F76600A88894 /* VersusTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066CB2652C85F76600A88894 /* Build configuration list for PBXNativeTarget "VersusTimerUITests" */;
+			buildPhases = (
+				066CB2512C85F76600A88894 /* Sources */,
+				066CB2522C85F76600A88894 /* Frameworks */,
+				066CB2532C85F76600A88894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				066CB2572C85F76600A88894 /* PBXTargetDependency */,
+			);
+			name = VersusTimerUITests;
+			productName = VersusTimerUITests;
+			productReference = 066CB2552C85F76600A88894 /* VersusTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		066CB2332C85F76500A88894 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					066CB23A2C85F76500A88894 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					066CB24A2C85F76600A88894 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 066CB23A2C85F76500A88894;
+					};
+					066CB2542C85F76600A88894 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 066CB23A2C85F76500A88894;
+					};
+				};
+			};
+			buildConfigurationList = 066CB2362C85F76500A88894 /* Build configuration list for PBXProject "VersusTimer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 066CB2322C85F76500A88894;
+			productRefGroup = 066CB23C2C85F76500A88894 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				066CB23A2C85F76500A88894 /* VersusTimer */,
+				066CB24A2C85F76600A88894 /* VersusTimerTests */,
+				066CB2542C85F76600A88894 /* VersusTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		066CB2392C85F76500A88894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066CB2462C85F76600A88894 /* Preview Assets.xcassets in Resources */,
+				066CB2432C85F76600A88894 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066CB2492C85F76600A88894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066CB2532C85F76600A88894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		066CB2372C85F76500A88894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066CB2412C85F76500A88894 /* ContentView.swift in Sources */,
+				066CB23F2C85F76500A88894 /* VersusTimerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066CB2472C85F76600A88894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066CB2502C85F76600A88894 /* VersusTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		066CB2512C85F76600A88894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066CB25C2C85F76600A88894 /* VersusTimerUITestsLaunchTests.swift in Sources */,
+				066CB25A2C85F76600A88894 /* VersusTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		066CB24D2C85F76600A88894 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 066CB23A2C85F76500A88894 /* VersusTimer */;
+			targetProxy = 066CB24C2C85F76600A88894 /* PBXContainerItemProxy */;
+		};
+		066CB2572C85F76600A88894 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 066CB23A2C85F76500A88894 /* VersusTimer */;
+			targetProxy = 066CB2562C85F76600A88894 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		066CB25D2C85F76600A88894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		066CB25E2C85F76600A88894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		066CB2602C85F76600A88894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VersusTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = P2G4663W4N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minsu.VersusTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		066CB2612C85F76600A88894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VersusTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = P2G4663W4N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minsu.VersusTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		066CB2632C85F76600A88894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P2G4663W4N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minsu.VersusTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VersusTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VersusTimer";
+			};
+			name = Debug;
+		};
+		066CB2642C85F76600A88894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P2G4663W4N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minsu.VersusTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VersusTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VersusTimer";
+			};
+			name = Release;
+		};
+		066CB2662C85F76600A88894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P2G4663W4N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minsu.VersusTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VersusTimer;
+			};
+			name = Debug;
+		};
+		066CB2672C85F76600A88894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P2G4663W4N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minsu.VersusTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VersusTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		066CB2362C85F76500A88894 /* Build configuration list for PBXProject "VersusTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				066CB25D2C85F76600A88894 /* Debug */,
+				066CB25E2C85F76600A88894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		066CB25F2C85F76600A88894 /* Build configuration list for PBXNativeTarget "VersusTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				066CB2602C85F76600A88894 /* Debug */,
+				066CB2612C85F76600A88894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		066CB2622C85F76600A88894 /* Build configuration list for PBXNativeTarget "VersusTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				066CB2632C85F76600A88894 /* Debug */,
+				066CB2642C85F76600A88894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		066CB2652C85F76600A88894 /* Build configuration list for PBXNativeTarget "VersusTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				066CB2662C85F76600A88894 /* Debug */,
+				066CB2672C85F76600A88894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 066CB2332C85F76500A88894 /* Project object */;
+}
