@@ -8,8 +8,11 @@ class CountdownViewModel: ObservableObject {
     @Published var totalTime: Double = 5.0  // 초기값 5초
     @Published var startColor: Color = .green  // 시작 색상 초기값
     @Published var endColor: Color = .red  // 종료 색상 초기값
+    @Published var isAutoTurnoverOn: Bool = false  // Auto Turnover 초기값
+    @Published var autoTurnoverDelay: Double = 3.0  // Auto Turnover Delay 초기값
 
     private var timer: Timer? = nil
+    var onComplete: (() -> Void)?
 
     func startCountdown() {
         self.remainingTime = totalTime
@@ -39,6 +42,7 @@ class CountdownViewModel: ObservableObject {
                 self.showRedBackground = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     self.resetToInitialTime()
+                    self.onComplete?()
                 }
             }
         }
@@ -68,6 +72,11 @@ class CountdownViewModel: ObservableObject {
     func setColors(startColor: Color, endColor: Color) {
         self.startColor = startColor
         self.endColor = endColor
+    }
+    
+    func setAutoTurnover(isOn: Bool, delay: Double) {
+        self.isAutoTurnoverOn = isOn
+        self.autoTurnoverDelay = delay
     }
     
     private func resetToInitialTime() {

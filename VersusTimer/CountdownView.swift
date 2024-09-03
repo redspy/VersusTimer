@@ -9,24 +9,44 @@ struct CountdownView: View {
         VStack(spacing: 0) {
             CountdownContent(viewModel: topViewModel)
                 .rotationEffect(.degrees(180)) // 상단 타이머 180도 회전
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .onAppear {
+                    setupAutoTurnover()
+                }
             
             Button(action: {
                 isSetupPresented.toggle()
             }) {
-                Text("Setup")
-                    .font(.title)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                Rectangle()
+                    .fill(Color.black)
+                    .frame(height: 20) // 세로 크기를 20으로 설정
             }
-            .padding()
-            .background(Color.gray.opacity(0.2))
+            .frame(maxWidth: .infinity)
             .sheet(isPresented: $isSetupPresented) {
                 SetupView(topViewModel: topViewModel, bottomViewModel: bottomViewModel)
             }
 
             CountdownContent(viewModel: bottomViewModel)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+    
+    private func setupAutoTurnover() {
+        topViewModel.onComplete = {
+            if self.topViewModel.isAutoTurnoverOn {
+                DispatchQueue.main.asyncAfter(deadline: .now() + self.topViewModel.autoTurnoverDelay) {
+                    self.bottomViewModel.startCountdown()
+                }
+            }
+        }
+        
+        bottomViewModel.onComplete = {
+            if self.bottomViewModel.isAutoTurnoverOn {
+                DispatchQueue.main.asyncAfter(deadline: .now() + self.bottomViewModel.autoTurnoverDelay) {
+                    self.topViewModel.startCountdown()
+                }
+            }
         }
     }
 }
@@ -53,11 +73,11 @@ struct CountdownContent: View {
                     .padding()
                     .background(viewModel.isRunning ? Color.gray : Color.blue)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
             }
             .disabled(viewModel.isRunning)
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(progressBackground().edgesIgnoringSafeArea(.all))
     }
     

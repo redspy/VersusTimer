@@ -10,6 +10,8 @@ struct SetupView: View {
     @State private var bottomTimerDuration: Double = 5
     @State private var startColor: Color = .green
     @State private var endColor: Color = .red
+    @State private var isAutoTurnoverOn: Bool = false
+    @State private var autoTurnoverDelay: Double = 3
 
     let colors: [Color] = [.red, .orange, .yellow, .green, .blue, .indigo, .purple]
 
@@ -65,6 +67,16 @@ struct SetupView: View {
                         }
                     }
                 }
+                
+                Section(header: Text("Auto Turnover")) {
+                    Toggle(isOn: $isAutoTurnoverOn) {
+                        Text("Enable Auto Turnover")
+                    }
+                    
+                    Stepper(value: $autoTurnoverDelay, in: 0...10) {
+                        Text("Turnover Delay: \(Int(autoTurnoverDelay)) seconds")
+                    }
+                }
             }
             .navigationTitle("Setup")
             .navigationBarItems(trailing: Button("Done") {
@@ -76,6 +88,8 @@ struct SetupView: View {
                 bottomTimerDuration = bottomViewModel.totalTime
                 startColor = topViewModel.startColor
                 endColor = topViewModel.endColor
+                isAutoTurnoverOn = topViewModel.isAutoTurnoverOn
+                autoTurnoverDelay = topViewModel.autoTurnoverDelay
             }
         }
     }
@@ -85,6 +99,8 @@ struct SetupView: View {
         bottomViewModel.setTime(bottomTimerDuration)
         topViewModel.setColors(startColor: startColor, endColor: endColor)
         bottomViewModel.setColors(startColor: startColor, endColor: endColor)
+        topViewModel.setAutoTurnover(isOn: isAutoTurnoverOn, delay: autoTurnoverDelay)
+        bottomViewModel.setAutoTurnover(isOn: isAutoTurnoverOn, delay: autoTurnoverDelay)
     }
 }
 
