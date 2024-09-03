@@ -1,74 +1,31 @@
 import SwiftUI
 
-class CountdownViewModel: ObservableObject {
-    @Published var timeInput: String = ""
-    @Published var remainingTime: Double = 0.0
-    @Published var isRunning: Bool = false
-    @Published var showRedBackground: Bool = false
-    @Published var blinkBackground: Bool = false
-    @Published var totalTime: Double = 0.0
-
-    private var timer: Timer? = nil
-
-    func startCountdown(time: Double) {
-        self.totalTime = time
-        self.remainingTime = time
-        self.isRunning = true
-        self.showRedBackground = false
-        self.blinkBackground = false
-        
-        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
-            if self.remainingTime > 0.01 {
-                self.remainingTime -= 0.01
-                
-                if self.remainingTime <= 3.0 && self.remainingTime > 2.99 {
-                    self.startBlinking()
-                }
-                
-                if self.remainingTime <= 2.0 && self.remainingTime > 1.99 {
-                    self.startBlinking()
-                }
-                
-                if self.remainingTime <= 1.0 && self.remainingTime > 0.99 {
-                    self.startBlinking()
-                }
-                
-            } else {
-                self.remainingTime = 0.00
-                self.stopCountdown()
-                self.showRedBackground = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.showRedBackground = false
-                }
-            }
-        }
-    }
-
-    func stopCountdown() {
-        self.timer?.invalidate()
-        self.timer = nil
-        self.isRunning = false
-        self.remainingTime = 0.00
-    }
-    
-    private func startBlinking() {
-        withAnimation(.easeInOut(duration: 0.2).repeatCount(2, autoreverses: true)) {
-            self.blinkBackground = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.blinkBackground = false
-        }
-    }
-}
-
 struct CountdownView: View {
     @StateObject private var topViewModel = CountdownViewModel()
     @StateObject private var bottomViewModel = CountdownViewModel()
+    @State private var isSetupPresented = false
 
     var body: some View {
         VStack(spacing: 0) {
             CountdownContent(viewModel: topViewModel)
                 .rotationEffect(.degrees(180)) // 상단 타이머 180도 회전
+            
+            Button(action: {
+                isSetupPresented.toggle()
+            }) {
+                Text("Setup")
+                    .font(.title)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+            .background(Color.gray.opacity(0.2))
+            .sheet(isPresented: $isSetupPresented) {
+                SetupView(topViewModel: topViewModel, bottomViewModel: bottomViewModel)
+            }
+
             CountdownContent(viewModel: bottomViewModel)
         }
     }
@@ -83,21 +40,13 @@ struct CountdownContent: View {
                 .font(.largeTitle)
                 .padding()
             
-            TextField("Enter time in seconds", text: $viewModel.timeInput)
-                .keyboardType(.decimalPad)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .multilineTextAlignment(.center)
-                .disabled(viewModel.isRunning)
-            
+            // 남은 시간을 소숫점 두 자리까지 표시
             Text(String(format: "%.2f", viewModel.remainingTime))
                 .font(.system(size: 50, weight: .bold, design: .monospaced))
                 .padding()
             
             Button(action: {
-                if let time = Double(viewModel.timeInput) {
-                    viewModel.startCountdown(time: time)
-                }
+                viewModel.startCountdown()
             }) {
                 Text(viewModel.isRunning ? "Running..." : "Start")
                     .font(.title)
