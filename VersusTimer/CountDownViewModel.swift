@@ -6,6 +6,8 @@ class CountdownViewModel: ObservableObject {
     @Published var showRedBackground: Bool = false
     @Published var blinkBackground: Bool = false
     @Published var totalTime: Double = 5.0  // 초기값 5초
+    @Published var startColor: Color = .green  // 시작 색상 초기값
+    @Published var endColor: Color = .red  // 종료 색상 초기값
 
     private var timer: Timer? = nil
 
@@ -61,6 +63,11 @@ class CountdownViewModel: ObservableObject {
     func setTime(_ time: Double) {
         self.totalTime = time
         self.remainingTime = time
+    }
+    
+    func setColors(startColor: Color, endColor: Color) {
+        self.startColor = startColor
+        self.endColor = endColor
     }
     
     private func resetToInitialTime() {

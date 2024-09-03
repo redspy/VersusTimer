@@ -66,7 +66,7 @@ struct CountdownContent: View {
         
         return GeometryReader { geometry in
             VStack(spacing: 0) {
-                Color.red
+                viewModel.endColor
                     .frame(height: geometry.size.height * (1.0 - progress))
                 
                 if viewModel.blinkBackground {
@@ -74,7 +74,7 @@ struct CountdownContent: View {
                         .frame(height: geometry.size.height * progress)
                         .transition(.opacity)
                 } else {
-                    Color.green
+                    viewModel.startColor
                         .frame(height: geometry.size.height * progress)
                 }
             }
