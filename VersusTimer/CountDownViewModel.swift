@@ -6,23 +6,30 @@ class CountdownViewModel: ObservableObject {
     @Published var showRedBackground: Bool = false
     @Published var blinkBackground: Bool = false
     @Published var totalTime: Double {
-        didSet { UserDefaults.standard.set(totalTime, forKey: "totalTime") }
+        didSet {
+            UserDefaults.standard.set(totalTime, forKey: totalTimeKey)
+            self.remainingTime = totalTime
+        }
     }
     @Published var startColor: Color
     @Published var endColor: Color
     @Published var isAutoTurnoverOn: Bool
     @Published var autoTurnoverDelay: Double
+    
+    private var totalTimeKey: String  // UserDefaults에 저장될 키를 지정
 
     private var timer: Timer? = nil
     var onComplete: (() -> Void)?
 
-    init() {
-        self.totalTime = UserDefaults.standard.double(forKey: "totalTime")
+    init(totalTimeKey: String) {
+        self.totalTimeKey = totalTimeKey
+        self.totalTime = UserDefaults.standard.double(forKey: totalTimeKey)
         self.startColor = UserDefaults.standard.color(forKey: "startColor") ?? .green
         self.endColor = UserDefaults.standard.color(forKey: "endColor") ?? .red
         self.isAutoTurnoverOn = UserDefaults.standard.bool(forKey: "isAutoTurnoverOn")
         self.autoTurnoverDelay = UserDefaults.standard.double(forKey: "autoTurnoverDelay")
         
+        // 초기값 설정
         if totalTime == 0 {
             totalTime = 5.0
         }
@@ -30,6 +37,9 @@ class CountdownViewModel: ObservableObject {
         if autoTurnoverDelay == 0 {
             autoTurnoverDelay = 3.0
         }
+        
+        // remainingTime을 totalTime으로 초기화
+        self.remainingTime = self.totalTime
     }
 
     func startCountdown() {

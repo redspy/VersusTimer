@@ -105,5 +105,6 @@ struct SetupView: View {
 }
 
 #Preview {
-    SetupView(topViewModel: CountdownViewModel(), bottomViewModel: CountdownViewModel())
+    SetupView(topViewModel: CountdownViewModel(totalTimeKey: "topTimerDuration"),
+              bottomViewModel: CountdownViewModel(totalTimeKey: "bottomTimerDuration"))
 }

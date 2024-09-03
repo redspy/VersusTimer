@@ -17,6 +17,7 @@
 		06FEAB242C85FAC600896EC1 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FEAB232C85FAC600896EC1 /* CountdownView.swift */; };
 		06FEAB262C87346B00896EC1 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FEAB252C87346B00896EC1 /* SetupView.swift */; };
 		06FEAB2C2C87375000896EC1 /* CountDownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FEAB2B2C87375000896EC1 /* CountDownViewModel.swift */; };
+		06FEAB2E2C87593A00896EC1 /* CountDownContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FEAB2D2C87593A00896EC1 /* CountDownContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		06FEAB232C85FAC600896EC1 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		06FEAB252C87346B00896EC1 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		06FEAB2B2C87375000896EC1 /* CountDownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewModel.swift; sourceTree = "<group>"; };
+		06FEAB2D2C87593A00896EC1 /* CountDownContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				06FEAB252C87346B00896EC1 /* SetupView.swift */,
 				06FEAB232C85FAC600896EC1 /* CountdownView.swift */,
 				06FEAB2B2C87375000896EC1 /* CountDownViewModel.swift */,
+				06FEAB2D2C87593A00896EC1 /* CountDownContent.swift */,
 				066CB2402C85F76500A88894 /* ContentView.swift */,
 				066CB2422C85F76600A88894 /* Assets.xcassets */,
 				066CB2442C85F76600A88894 /* Preview Content */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06FEAB242C85FAC600896EC1 /* CountdownView.swift in Sources */,
+				06FEAB2E2C87593A00896EC1 /* CountDownContent.swift in Sources */,
 				066CB2412C85F76500A88894 /* ContentView.swift in Sources */,
 				06FEAB2C2C87375000896EC1 /* CountDownViewModel.swift in Sources */,
 				06FEAB262C87346B00896EC1 /* SetupView.swift in Sources */,
