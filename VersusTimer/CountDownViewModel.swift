@@ -5,14 +5,32 @@ class CountdownViewModel: ObservableObject {
     @Published var isRunning: Bool = false
     @Published var showRedBackground: Bool = false
     @Published var blinkBackground: Bool = false
-    @Published var totalTime: Double = 5.0  // 초기값 5초
-    @Published var startColor: Color = .green  // 시작 색상 초기값
-    @Published var endColor: Color = .red  // 종료 색상 초기값
-    @Published var isAutoTurnoverOn: Bool = false  // Auto Turnover 초기값
-    @Published var autoTurnoverDelay: Double = 3.0  // Auto Turnover Delay 초기값
+    @Published var totalTime: Double {
+        didSet { UserDefaults.standard.set(totalTime, forKey: "totalTime") }
+    }
+    @Published var startColor: Color
+    @Published var endColor: Color
+    @Published var isAutoTurnoverOn: Bool
+    @Published var autoTurnoverDelay: Double
 
     private var timer: Timer? = nil
     var onComplete: (() -> Void)?
+
+    init() {
+        self.totalTime = UserDefaults.standard.double(forKey: "totalTime")
+        self.startColor = UserDefaults.standard.color(forKey: "startColor") ?? .green
+        self.endColor = UserDefaults.standard.color(forKey: "endColor") ?? .red
+        self.isAutoTurnoverOn = UserDefaults.standard.bool(forKey: "isAutoTurnoverOn")
+        self.autoTurnoverDelay = UserDefaults.standard.double(forKey: "autoTurnoverDelay")
+        
+        if totalTime == 0 {
+            totalTime = 5.0
+        }
+        
+        if autoTurnoverDelay == 0 {
+            autoTurnoverDelay = 3.0
+        }
+    }
 
     func startCountdown() {
         self.remainingTime = totalTime
@@ -72,15 +90,44 @@ class CountdownViewModel: ObservableObject {
     func setColors(startColor: Color, endColor: Color) {
         self.startColor = startColor
         self.endColor = endColor
+        UserDefaults.standard.setColor(startColor, forKey: "startColor")
+        UserDefaults.standard.setColor(endColor, forKey: "endColor")
     }
     
     func setAutoTurnover(isOn: Bool, delay: Double) {
         self.isAutoTurnoverOn = isOn
         self.autoTurnoverDelay = delay
+        UserDefaults.standard.set(isOn, forKey: "isAutoTurnoverOn")
+        UserDefaults.standard.set(delay, forKey: "autoTurnoverDelay")
     }
     
     private func resetToInitialTime() {
         self.remainingTime = self.totalTime
         self.showRedBackground = false
+    }
+}
+
+extension UserDefaults {
+    func color(forKey key: String) -> Color? {
+        if let colorData = data(forKey: key) {
+            do {
+                if let uiColor = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData) {
+                    return Color(uiColor)
+                }
+            } catch {
+                print("Failed to unarchive color data for key: \(key)")
+            }
+        }
+        return nil
+    }
+
+    func setColor(_ color: Color, forKey key: String) {
+        let uiColor = UIColor(color)
+        do {
+            let colorData = try NSKeyedArchiver.archivedData(withRootObject: uiColor, requiringSecureCoding: false)
+            set(colorData, forKey: key)
+        } catch {
+            print("Failed to archive color for key: \(key)")
+        }
     }
 }
